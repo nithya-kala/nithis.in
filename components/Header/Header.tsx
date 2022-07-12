@@ -1,10 +1,13 @@
-import { Burger, Container, createStyles, Group, Header, Paper, Transition } from '@mantine/core';
-import { useBooleanToggle } from '@mantine/hooks';
-import { useState } from 'react';
-import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
-import { ProfileImg } from '../ProfileImg/ProfileImg';
+import Link from 'next/link'
+import { Burger, Container, createStyles, Group, Header, Paper, Transition } from '@mantine/core'
+import { useBooleanToggle } from '@mantine/hooks'
+import { useState } from 'react'
+import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle'
+import { ProfileImg } from '../ProfileImg/ProfileImg'
+import { useRouter } from 'next/router'
+import { NavLink } from './NavLink'
 
-const HEADER_HEIGHT = 60;
+const HEADER_HEIGHT = 60
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -76,36 +79,22 @@ const useStyles = createStyles((theme) => ({
       color: theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 3 : 7],
     },
   },
-}));
+}))
 
 interface HeaderResponsiveProps {
-  links: { link: string; label: string }[];
+  links: { link: string; label: string }[]
 }
 
 export function HeaderResponsive({ links }: HeaderResponsiveProps) {
-  const [opened, toggleOpened] = useBooleanToggle(false);
-  const [active, setActive] = useState(links[0].link);
-  const { classes, cx } = useStyles();
+  const [opened, toggleOpened] = useBooleanToggle(false)
+  const { classes } = useStyles()
 
-  const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.link}
-      className={cx(classes.link, { [classes.linkActive]: active === link.link })}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-        toggleOpened(false);
-      }}
-    >
-      {link.label}
-    </a>
-  ));
+  const items = links.map(({ link, label }) => <NavLink key={link} label={label} href={link} />)
 
   return (
     <Header height={HEADER_HEIGHT} mb={0} className={classes.root}>
       <Container className={classes.header}>
-        <ProfileImg size={36} rounded/>
+        <ProfileImg size={36} rounded />
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
@@ -127,5 +116,5 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
         </Transition>
       </Container>
     </Header>
-  );
+  )
 }
