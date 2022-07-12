@@ -1,7 +1,7 @@
-import { Welcome } from './Welcome';
+import { Welcome as WelcomeC } from './Welcome';
 
 export default {
-  title: 'Welcome',
+  title: 'components/Welcome',
 };
 
-export const Usage = () => <Welcome />;
+export const Welcome = () => <WelcomeC />;
