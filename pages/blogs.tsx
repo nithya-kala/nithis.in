@@ -1,3 +1,4 @@
+import { Container } from '@mantine/core'
 import { ArticleCard } from '../components/ArticleCard/ArticleCard'
 import { HeaderResponsive } from '../components/Header/Header'
 
@@ -25,7 +26,7 @@ export default function HomePage() {
   return (
     <>
       <HeaderResponsive links={LINKS} />
-      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
+      <Container style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
         <div style={{ width: 300, padding: 10 }}>
           <ArticleCard {...props} />
         </div>
@@ -41,10 +42,7 @@ export default function HomePage() {
         <div style={{ width: 300, padding: 10 }}>
           <ArticleCard {...props} />
         </div>
-        <div style={{ width: 300, padding: 10 }}>
-          <ArticleCard {...props} />
-        </div>
-      </div>
+      </Container>
     </>
   )
 }
