@@ -1,8 +1,10 @@
 import {
   Button, Container, createStyles, Group, List, Text, ThemeIcon, Title
 } from '@mantine/core'
+import Image from 'next/image'
 import { Check } from 'tabler-icons-react'
 import { ProfileImg } from '../ProfileImg/ProfileImg'
+import HeroImg from './undraw_fitting_piece_re_pxay.svg'
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -13,6 +15,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   content: {
+    flex: 1,
     marginRight: theme.spacing.xl * 2,
 
     [theme.fn.smallerThan('md')]: {
@@ -40,9 +43,10 @@ const useStyles = createStyles((theme) => ({
   },
 
   image: {
-    flex: 1,
-    maxWidth: 280,
+    flex: 0,
+    minWidth: 440,
     display: 'flex',
+    position: 'relative',
     alignItems: 'center',
     justifyContent: 'center',
   
@@ -86,7 +90,8 @@ export const HeroBlock = () => {
             </Group>
           </div>
           <div className={classes.image} >
-            <ProfileImg size={150} rounded backgroundColor="rgba(155, 155, 155, .05)" />
+            <Image src={HeroImg}  layout='fill' objectFit='contain'/> 
+            {/* <ProfileImg size={150} rounded backgroundColor="rgba(155, 155, 155, .05)" /> */}
           </div>
         </div>
       </Container>
