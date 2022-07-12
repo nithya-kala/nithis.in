@@ -1,4 +1,5 @@
 import { NotFound } from '../components/404/404'
+import { Footer } from '../components/Footer/Footer'
 import { HeaderResponsive } from '../components/Header/Header'
 
 const LINKS = [
@@ -13,6 +14,7 @@ export default function Custom404() {
     <>
       <HeaderResponsive links={LINKS} />
       <NotFound />
+      <Footer />
     </>
   )
 }

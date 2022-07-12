@@ -1,3 +1,4 @@
+import { Footer } from '../components/Footer/Footer'
 import { HeaderResponsive } from '../components/Header/Header'
 import { HeroBlock } from '../components/HeroBlock/HeroBlock'
 
@@ -13,6 +14,7 @@ export default function HomePage() {
     <>
       <HeaderResponsive links={LINKS} />
       <HeroBlock />
+      <Footer />
     </>
   )
 }
