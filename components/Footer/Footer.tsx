@@ -1,11 +1,13 @@
 import React from 'react'
 import { createStyles, Container, Group, ActionIcon, Text } from '@mantine/core'
 import { BrandTwitter, BrandYoutube, BrandInstagram, BrandLinkedin, BrandGithub } from 'tabler-icons-react'
+import { BorderImg } from './BorderImg'
 
 const useStyles = createStyles((theme) => ({
   footer: {
     marginTop: 0,
-    borderTop: `1px solid ${
+    position: 'relative',
+    borderTop: `0px solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
   },
@@ -16,16 +18,9 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     paddingTop: theme.spacing.sm,
     paddingBottom: theme.spacing.sm,
-
-    // [theme.fn.smallerThan('xs')]: {
-    //   flexDirection: 'column',
-    // },
   },
 
   links: {
-    // [theme.fn.smallerThan('xs')]: {
-    //   marginTop: theme.spacing.md,
-    // },
   },
 }))
 
@@ -35,6 +30,7 @@ export function Footer() {
 
   return (
     <div className={classes.footer}>
+      <BorderImg />
       <Container className={classes.inner}>
         <Text color="dimmed" size="sm" align="center">
           © {year} Nithyakala

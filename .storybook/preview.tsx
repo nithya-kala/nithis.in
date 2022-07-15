@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { MantineProvider, ColorSchemeProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
@@ -26,7 +27,10 @@ function ThemeWrapper(props: { children: React.ReactNode }) {
   );
 }
 
-export const decorators = [(renderStory: Function) => <ThemeWrapper>{renderStory()}</ThemeWrapper>];
+export const decorators = [
+  // withNextRouter,
+  (renderStory: Function) => <ThemeWrapper>{renderStory()}</ThemeWrapper>,
+];
 
 
 // Fix rendering NextImage in storybook
@@ -42,3 +46,4 @@ Object.defineProperty(NextImage, "default", {
     />
   ),
 });
+
