@@ -41,7 +41,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface ArticleCardProps {
+export interface ArticleCardProps {
   image: any;
   link: string;
   title: string;

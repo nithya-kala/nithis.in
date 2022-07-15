@@ -13,7 +13,7 @@ export const BorderImg: FC = () => (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 35.3 2.2"
       preserveAspectRatio="none"
-      fill="#228be611"
+      fill="rgb(34 139 230 / 30%)"
     >
       <path d="M35.3 1.7c-3-.6-9.3.4-16.2 0A112 112 0 0 0 0 1.7v.5h35.3z" fill="%23f0f0f0" />
       <path

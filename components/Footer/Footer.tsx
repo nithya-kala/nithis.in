@@ -1,6 +1,5 @@
-import React from 'react'
-import { createStyles, Container, Group, ActionIcon, Text } from '@mantine/core'
-import { BrandTwitter, BrandYoutube, BrandInstagram, BrandLinkedin, BrandGithub } from 'tabler-icons-react'
+import { ActionIcon, Container, createStyles, Group, Text } from '@mantine/core'
+import { BrandGithub, BrandLinkedin } from 'tabler-icons-react'
 import { BorderImg } from './BorderImg'
 
 const useStyles = createStyles((theme) => ({
@@ -36,12 +35,17 @@ export function Footer() {
           © {year} Nithyakala
         </Text>{' '}
         <Group spacing={0} className={classes.links} position="right" noWrap>
-          <ActionIcon size="lg">
-            <BrandLinkedin size={18} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <BrandGithub size={18} />
-          </ActionIcon>
+          <a href='https://www.linkedin.com/in/nithya-kala/' rel='noopener' target='_blank' title='LinkedIn'>
+            <ActionIcon size="lg">
+              <BrandLinkedin size={18} />
+            </ActionIcon>
+          </a>
+
+          <a href='https://github.com/nithya-kala' rel='noopener' target='_blank' title='Github'>
+            <ActionIcon size="lg">
+              <BrandGithub size={18} />
+            </ActionIcon>
+          </a>
         </Group>
       </Container>
     </div>

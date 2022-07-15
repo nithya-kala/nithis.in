@@ -94,7 +94,10 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
   return (
     <Header height={HEADER_HEIGHT} mb={0} className={classes.root}>
       <Container className={classes.header}>
-        <ProfileImg size={36} rounded />
+        <a href='/' title='Home'>
+          <ProfileImg size={36} rounded />
+        </a>
+        
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
