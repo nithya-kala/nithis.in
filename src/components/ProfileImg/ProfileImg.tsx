@@ -1,7 +1,7 @@
 import { createStyles } from '@mantine/core'
 import Image from 'next/image'
 import { FC } from 'react'
-import ProfileImage from "../../public/nithya-img.png";
+import ProfileImage from "../../../public/nithya-img.png";
 
 type StyleVars = {
   size?: number | string
