@@ -1,4 +1,5 @@
-import { Container, Space } from '@mantine/core'
+import { Container } from '@mantine/core'
+import { Page } from '../components/Page/Page'
 import { ProjectItem } from '../components/ProjectItem/ProjectItem'
 import { SectionHead } from '../components/SectionHead/SectionHead'
 
@@ -17,13 +18,13 @@ const PROJECTS = [
 
 export default function ProjectsPage() {
   return (
-    <>
+    <Page>
       <SectionHead centered supTitle="Projects" title="Some of my recent works" />
       <Container mt={50} mb={50}>
         <ProjectItem {...PROJECTS[0]} />
         <ProjectItem {...PROJECTS[0]} />
         <ProjectItem {...PROJECTS[0]} />
       </Container>
-    </>
+    </Page>
   )
 }

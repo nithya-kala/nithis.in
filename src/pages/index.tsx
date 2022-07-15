@@ -1,24 +1,14 @@
-import { Box } from '@mantine/core'
+import { Box, Button, Container, Group } from '@mantine/core'
+import { GetStaticProps } from 'next'
 import { BlogPreview } from '../components/BlogListing/BlogPreview'
 import { HeroBlock } from '../components/HeroBlock/HeroBlock'
+import { Page } from '../components/Page/Page'
 import { SectionHead } from '../components/SectionHead/SectionHead'
+import { getDatabase } from '../lib/notion'
 
-const props = {
-  image: 'https://assets.imgix.net/hp/snowshoe.jpg?auto=compress&w=600&h=600&fit=crop&fm=png',
-  link: 'https://mantine.dev/',
-  title: 'Resident Evil Village review',
-  rating: 'outstanding',
-  description:
-    "Resident Evil Village is a direct sequel to 2017's Resident Evil 7, but takes a very different direction to its predecessor, namely the fact that this time round instead of fighting against various mutated zombies, you’re now dealing with more occult enemies like werewolves and vampires.",
-  author: {
-    name: 'Bill Wormeater',
-    image: 'https://assets.imgix.net/hp/snowshoe.jpg?auto=compress&w=600&h=600&fit=crop&fm=png',
-  },
-}
-
-export default function HomePage() {
+export default function HomePage({ posts }: { posts: any[] }) {
   return (
-    <>
+    <Page>
       <HeroBlock />
       <Box style={{ background: 'linear-gradient(#8cbff31a, transparent)' }}>
         <SectionHead
@@ -26,8 +16,32 @@ export default function HomePage() {
           title="I love to share my knowledge through writing."
           description="Check out a few of my most recent publishings."
         />
-        <BlogPreview articles={[props, props, props]} />
+        <BlogPreview posts={posts} />
+        <Container mt={0} mb={30}>
+          <Button
+            variant='default'
+            component="a"
+            href="/blogs"
+            radius="xl"
+            size="md"
+          >
+            See all articles
+          </Button>
+        </Container>
       </Box>
-    </>
+    </Page>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  if (process.env.POSTS_TABLE_ID == null) {
+    return { props: { posts: [] } }
+  }
+
+  const posts = await getDatabase(process.env.POSTS_TABLE_ID)
+
+  return {
+    props: { posts: posts.slice(0, 3) },
+    revalidate: 900, // 15 minutes
+  }
 }

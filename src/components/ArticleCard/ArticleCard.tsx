@@ -38,19 +38,21 @@ const useStyles = createStyles((theme) => ({
 
   footer: {
     marginTop: theme.spacing.md,
+    borderTop: '1px dashed #88888830',
+    paddingTop: theme.spacing.md,
   },
 }));
 
 export interface ArticleCardProps {
   image: any;
   link: string;
-  title: string;
-  description: string;
-  rating: string;
+  title: React.ReactNode;
+  description: React.ReactNode;
   author: {
     name: string;
     image: string;
   };
+  date: string
 }
 
 export function ArticleCard({
@@ -60,12 +62,11 @@ export function ArticleCard({
   title,
   description,
   author,
-  rating,
   ...others
 }: ArticleCardProps & Omit<React.ComponentPropsWithoutRef<'div'>, keyof ArticleCardProps>) {
   const { classes, cx } = useStyles();
   const theme = useMantineTheme();
-  const linkProps = { href: link, target: '_blank', rel: 'noopener noreferrer' };
+  const linkProps = { href: link };
 
   return (
     <Card withBorder radius="md" className={cx(classes.card, className)} {...others}>
@@ -74,10 +75,6 @@ export function ArticleCard({
           <Image src={image} height={120} />
         </a>
       </Card.Section>
-
-      <Badge className={classes.rating} variant="gradient" gradient={{ from: 'yellow', to: 'red' }}>
-        {rating}
-      </Badge>
 
       <Text className={classes.title} weight={500} component="a" {...linkProps}>
         {title}
@@ -96,15 +93,7 @@ export function ArticleCard({
         </Center>
 
         <Group spacing={8} mr={0}>
-          <ActionIcon className={classes.action} style={{ color: theme.colors.red[6] }}>
-            <Heart size={16} />
-          </ActionIcon>
-          <ActionIcon className={classes.action} style={{ color: theme.colors.yellow[7] }}>
-            <Bookmark size={16} />
-          </ActionIcon>
-          <ActionIcon className={classes.action}>
-            <Share size={16} />
-          </ActionIcon>
+          <Text size='xs' color="dimmed">{others.date}</Text>
         </Group>
       </Group>
     </Card>

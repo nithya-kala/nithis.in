@@ -1,5 +1,5 @@
-import { Box, Center, Container, Divider, Text, Title } from '@mantine/core'
-import { ProfileImg } from '../components/ProfileImg/ProfileImg'
+import { Box, Container, Divider, Title } from '@mantine/core'
+import { Page } from '../components/Page/Page'
 import { SectionHead } from '../components/SectionHead/SectionHead'
 import { WorkTimeline } from '../components/WorkTimeline/WorkTimeLine'
 
@@ -23,52 +23,48 @@ const WorkExpList = [
 
 export default function AboutPage() {
   return (
-    <Container>
-      <SectionHead centered supTitle="About Me" title="Here's my story!" />
-      <Center mt={80} mb={60}>
-        <ProfileImg size={120} backgroundColor="#7a829020" rounded />
-      </Center>
-      <Box mb={50}>
-        <p>
-          I'm Braydon, a developer, creative coder,{' '}
-          <Text variant="link" component="a" href="/blog">
-            blogger
-          </Text>{' '}
-          and self-proclaimed designer who specializes in front-end development. My mission is to
-          translate user-focussed designs into pixel-perfect websites or applications that run
-          blazing fast.
-        </p>
-        <p>
-          I'm currently working as a senior front end developer at LogicGate where I help develop an
-          agile GRC cloud solution that combines powerful functionality with intuitive design to
-          enhance enterprise GRC programs.
-        </p>
-        <p>
-          Prior to LogicGate, I worked as a senior full-stack engineer at Cognizant where I helped
-          architect and develop full-stack RESTful microservices, train and prepare developers for
-          delivery, and assist in leading the front-end practice in a lab-based working environment.
-        </p>
-        <p>
-          Before Cognizant, I worked as a UI Developer for projekt202 helping craft design systems
-          and building reusable component libraries for multi-million dollar companies.
-        </p>
-        <p>
-          In a past life, I was an indie mobile developer making mobile games for iOS and Android,
-          with one of my games outselling Angry Birds.
-        </p>
-        <p>
-          You can find me on Twitter where I share tech-related tidbits and build in public, or you
-          can follow me on GitHub. I often write about my findings on my blog and create cool things
-          over on CodePen. I also help run a mediocre podcast.
-        </p>
-      </Box>
-      <Divider variant="dashed" />
-      <Box mt={50} mb={50}>
-        <Title order={3} mt={20} mb={20}>
-          Work experience
-        </Title>
-        <WorkTimeline expList={WorkExpList} />
-      </Box>
-    </Container>
+    <Page>
+      <Container>
+        <SectionHead centered supTitle="About Me" title="Here's my story!" />
+        <Box mb={50} mt={50}>
+          <p>
+            I'm Nithyakala, full stack developer, problem-solver and results-oriented. My mission is
+            to translate user-focused ideas and requirements into applications that run blazing
+            fast. Expertise in REST API development with the NodeJS express.
+          </p>
+          <p>
+            I'm currently working as application developer at{' '}
+            <a href="https://www.ibm.com" target="_blank" rel="noreferrer">
+              IBM
+            </a>{' '}
+            where I help to develop various compliance tools with powerful functionality, high
+            quality, scalable frontend web applications using Angular and React. Train and mentored
+            developers for delivery.
+          </p>
+          <p>
+            Prior to IBM, I worked as senior software engineer at{' '}
+            <a href="https://www.emids.com" target="_blank" rel="noreferrer">
+              emids
+            </a>{' '}
+            where I helped architect to develop REST API's using Expressjs.
+          </p>
+          <p>
+            Before emids, I worked as a Associate for{' '}
+            <a href="https://www.cognizant.com/us/en" target="_blank" rel="norefferer">
+              Cognizant
+            </a>{' '}
+            helped in building reusable component libraries for multi-million dollar companies.
+            Ensured the E2E quality of applications with Selenium cucumber BDD framework.
+          </p>
+        </Box>
+        <Divider variant="dashed" />
+        <Box mt={50} mb={50}>
+          <Title order={3} mt={20} mb={20}>
+            Work experience
+          </Title>
+          <WorkTimeline expList={WorkExpList} />
+        </Box>
+      </Container>
+    </Page>
   )
 }
