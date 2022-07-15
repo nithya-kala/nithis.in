@@ -61,7 +61,7 @@ export function BlogPreview({ posts }: BlogPreviewProps) {
 
   for (const props of articles) {
     items.push(
-      <div className={classes.blogItem}>
+      <div className={classes.blogItem} key={props.link}>
         <ArticleCard {...props} />
       </div>
     )

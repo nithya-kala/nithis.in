@@ -1,5 +1,4 @@
 import { Badge, Box, Grid, Group, Image, Text, Title } from '@mantine/core'
-import { StaticImageData } from 'next/image'
 
 
 type MyProps = {

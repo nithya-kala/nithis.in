@@ -57,7 +57,7 @@ export const mapDatabaseToPaths = (database: PostProps[]) => {
 
 export const mapDatabaseItemToPageProps = async (id: string) => {
   const page = await getPage(id)
-  const blocks = await getBlocks(id)
+  const blocks = await getBlocks(id) as any[]
 
   const childBlocks = await Promise.all(
     blocks

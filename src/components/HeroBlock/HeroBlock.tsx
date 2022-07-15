@@ -85,7 +85,7 @@ export const HeroBlock = () => {
             </Group>
           </div>
           <div className={classes.image}>
-            <Image src={HeroImg} layout="fill" objectFit="contain" />
+            <Image src={HeroImg} layout="fill" objectFit="contain" unoptimized />
             {/* <ProfileImg size={150} rounded backgroundColor="rgba(155, 155, 155, .05)" /> */}
           </div>
         </div>

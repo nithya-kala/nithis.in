@@ -27,7 +27,7 @@ export const ProfileImg: FC<MyProps> = ({ size, rounded, backgroundColor }) => {
 
   return (
     <div className={classes.root}>
-      <Image src={ProfileImage} alt="Profile Image" layout='fill' objectFit="cover" />
+      <Image src={ProfileImage} alt="Profile Image" layout='fill' objectFit="cover" unoptimized/>
     </div>
   )
 }
