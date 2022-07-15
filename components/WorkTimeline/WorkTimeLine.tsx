@@ -1,4 +1,4 @@
-import { Box, Button, Container, Group, Table } from '@mantine/core'
+import { Box, Button, Container, Group, Table, Text } from '@mantine/core'
 
 type MyProps = {
   expList: Array<{
@@ -13,7 +13,7 @@ export function WorkTimeline({ expList }: MyProps) {
     <tr key={exp.title}>
       <td>{exp.title}</td>
       <td>
-        <a href="{exp.org.link}">{exp.org.name}</a>
+        <Text variant='link' component='a' href="{exp.org.link}">{exp.org.name}</Text>
       </td>
       <td>{exp.duration}</td>
     </tr>
