@@ -79,7 +79,14 @@ export const HeroBlock = () => {
             </Text>
 
             <Group mt={30}>
-              <Button component='a' href="https://www.linkedin.com/in/nithya-kala/" radius="xl" size="md" className={classes.control}>
+              <Button 
+                component='a' 
+                href="https://www.linkedin.com/in/nithya-kala/" 
+                target="_blank"
+                rel="noopener"
+                radius="xl" 
+                size="md" 
+                className={classes.control}>
                 LinkedIn Profile
               </Button>
             </Group>
