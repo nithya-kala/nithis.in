@@ -1,18 +1,26 @@
-# Mantine Next Template
+# Personal Website+Blog [[nithis.in](https://nithis.in)]
 
-Get started with Mantine + Next with just a few button clicks.
-Click `Use this template` button at the header of repository or [follow this link](https://github.com/mantinedev/mantine-next-template/generate) and
-create new repository with `@mantine` packages. Note that you have to be logged in to GitHub to generate template.
+Built with [Mantine + Next template](https://github.com/mantinedev/mantine-next-template/) using
+1. React.js
+2. Next.js
+3. Notion API ([notion js sdk](https://github.com/makenotion/notion-sdk-js))
+4. [Storybook](https://storybook.js.org/)
+4. [Mantine UI](https://mantine.dev/) 
+5. [Mantine components](https://ui.mantine.dev/) and
+6. [Cloudflare pages](https://pages.cloudflare.com/) for hosting
 
 ## Features
 
-This template comes with several essential features:
+Both the website and blog is generated using `next export` as a SSG (Static Site Generation) and gets auto deployed in [Cloudflare pages](https://pages.cloudflare.com/) with automatic SSL. 
 
-- Server side rendering setup for Mantine
-- Color scheme is stored in cookie to avoid color scheme mismatch after hydration
-- Storybook with color scheme toggle
-- Jest with react testing library
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+Publishing flow is
+
+1. For static pages like [home](https://nithis.in) and [about](https://nithis.in/about), pushing changes to `main` will trigger auto-deployment via cloudflare bot
+2. For dynamic pages like [articls](https://nithis.in/blogs),
+    - Create or update blog post in Notion.so    
+    - Use external images for cover image
+    - Test locally with `yarn run dev`
+    - Login to cloudflare to re-trigger deployment
 
 ## npm scripts
 
