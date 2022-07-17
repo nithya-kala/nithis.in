@@ -46,7 +46,7 @@ export default function AboutPage() {
             <a href="https://www.emids.com" target="_blank" rel="noreferrer">
               emids
             </a>{' '}
-            where I helped architect to develop REST API's using Expressjs.
+            where I helped architect to develop REST API's using Expressjs. Prepared and delivered reports regarding project status and implementation. Developed Automated tasks with cron jobs, that reduces the repetitive work
           </p>
           <p>
             Before emids, I worked as a Associate for{' '}
