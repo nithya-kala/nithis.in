@@ -69,8 +69,6 @@ const BlogPost: NextPage<Props> = ({ page, ...props }) => {
     return <FullLoading />
   }
 
-  console.log(JSON.stringify(page, null, 2))
-
   const author = {
     // @ts-ignore
     name: page.properties.Author.text[0].text.content,

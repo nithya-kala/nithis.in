@@ -28,7 +28,12 @@ function postToArticles(posts: PostProps[]) {
   const articles: ArticleCardProps[] = []
 
   for (const post of posts) {
-    const image = post.cover && post.cover.file ? post.cover.file.url : DUMMY_IMG
+    let image = DUMMY_IMG
+
+    if ( post.cover) {
+      if (post.cover.file && post.cover.file.url) image = post.cover.file.url
+      if (post.cover.external && post.cover.external.url) image = post.cover.external.url
+    }
 
     const when = dayjs(post.properties.Date.date.start)
     const date = when.isBefore(30, 'days') ? when.format('YYYY-MM-DD') : when.fromNow()

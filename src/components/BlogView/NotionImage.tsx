@@ -12,6 +12,7 @@ export const NotionImage: React.FC<{ src: string; alt: string }> = ({
       objectFit="cover"
       objectPosition="center"
       placeholder="blur"
+      unoptimized
     />
   )
 }

@@ -21,5 +21,5 @@ export interface PostItem {
 
 export interface PostProps extends Omit<Page, 'properties'> {
   properties: PostItem
-  cover?: { file: { url: string } }
+  cover?: { file?: { url: string }, external?: { url: string } }
 }
